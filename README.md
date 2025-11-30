@@ -39,4 +39,19 @@ We consider the grid size as $G$ and the box size as $B$.
 
 - For one cage, we cant have two different combinations - $\bigwedge_{i_1<i_2} \neg combo(C,i_1) \vee \neg combo(C, i_2)$
 
-- No two cells in the same cage $C$ with a set of coordinates $X_c$ can have the same number $n$ - $\bigwedge_n \bigwedge_{(r_1,c_1) < (r_2,c_2) \in X_C} \neg num(r_1,c_1,n) \vee \neg num(r_2,c_2,n($
+- No two cells in the same cage $C$ with a set of coordinates $X_c$ can have the same number $n$ - $\bigwedge_n \bigwedge_{(r_1,c_1) < (r_2,c_2) \in X_C} \neg num(r_1,c_1,n) \vee \neg num(r_2,c_2,n)$
+
+
+## Example instances
+
+- input_4x4_working.in : A 4x4 solvable instance
+- input_9x9_working.in : A 9x9 solvable instance(example taken directly from the website of the problem)
+- input_9x9_unsat.in : An unsatisfiable instance
+- input_large.in : An instance that takes a considerable amount of time to process
+
+## Experiments
+
+Experiments were run on AMD Ryzen 7 5800X 8-Core Processor and 64 GB Ram on Fedora.
+We will focus on one single instance, but keep increasing the size of our grid. Creating a killer sudoku with a size 16 or higher is very hard to do, so we will stick with constraints for the cages for 4x4 or 9x9 and just increase the size(this will affect the satisfiability).
+
+
