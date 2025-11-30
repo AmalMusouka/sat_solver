@@ -153,23 +153,20 @@ def call_solver(cnf, nr_vars, output_name, solver_name, verbosity):
 
 def print_solution_grid(solution_line):
 
-    N_cube = NR_TILES * GRID_SIZE  # 729 for a 9x9
+    N_cube = NR_TILES * GRID_SIZE
 
     parts = solution_line.split()
     true_vars = [int(p) for p in parts[1:] if int(p) > 0 and int(p) <= N_cube]
 
-    # 2. Initialize the empty grid
+
     grid = [[0] * GRID_SIZE for _ in range(GRID_SIZE)]
 
-    # 3. Decode each TRUE variable
-    for v_id in true_vars:
-        # Subtract 1 because formula is based on 0-indexed variables
-        v_id_0 = v_id - 1
+    for var_id in true_vars:
+        var_id_0 = var_id - 1
 
-        # DIMACS (R, C, N) decoding based on the standard formula:
-        row_0 = v_id_0 // NR_TILES  # Row (0-indexed)
-        col_0 = (v_id_0 % NR_TILES) // GRID_SIZE  # Column (0-indexed)
-        num = (v_id_0 % GRID_SIZE) + 1  # Number (1-indexed)
+        row_0 = var_id_0 // NR_TILES
+        col_0 = (var_id_0 % NR_TILES) // GRID_SIZE
+        num = (var_id_0 % GRID_SIZE) + 1
 
         grid[row_0][col_0] = num
 
@@ -182,16 +179,15 @@ def print_solution_grid(solution_line):
     print()
 
 
-    # Print top border
+    # top border
     print(" " + "---" * GRID_SIZE + "---")
 
     for r in range(GRID_SIZE):
         row_output = "| "
         for c in range(GRID_SIZE):
-            # Add the number, padding for alignment
             row_output += str(grid[r][c]).center(2)
 
-            # Add vertical box separator
+            # vertical box separator
             if (c + 1) % box_size == 0 and c < GRID_SIZE - 1:
                 row_output += "| "
             else:
@@ -200,11 +196,11 @@ def print_solution_grid(solution_line):
         row_output += "|"
         print(row_output)
 
-        # Add horizontal box separator
+        # horizontal box separator
         if (r + 1) % box_size == 0 and r < GRID_SIZE - 1:
             print("|" + ("---" * box_size + "+") * box_size)  # Adjusted horizontal separator
 
-    # Print bottom border
+    # bottom border
     print(" " + "---" * GRID_SIZE + "---")
 
 
