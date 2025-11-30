@@ -2,7 +2,7 @@ This is a solution to the homework "Killer Sudoku" with $n$ constraints(size of 
 
 # Problem Description
 
-Killer Sudoku is a puzzle played on a {n×n} grid containing nxn cells. The cells are filled in with numbers from the set {1…n}. Each row and column must contain all numbers {1…n}. Each of the n non-overlapping $\sqrt n x \sqrt n$ subsquares (named boxes) must also contain all numbers {1…n}.
+Killer Sudoku is a puzzle played on a {n×n} grid containing nxn cells. The cells are filled in with numbers from the set {1…n}. Each row and column must contain all numbers {1…n}. Each of the n non-overlapping $\sqrt n$ x $\sqrt n$ subsquares (named boxes) must also contain all numbers {1…n}.
 
 Each Killer Sudoku puzzle has a set of cages. A cage is a set of contiguous cells and a total; the numbers in the cells must add up to the total. Also, the cells in a cage cannot contain the same number more than once. The cages do not overlap, and they cover all cells. Cages typically contain two to four cells. Typically a Killer Sudoku puzzle will have exactly one solution. 
 
