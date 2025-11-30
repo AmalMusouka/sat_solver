@@ -63,12 +63,16 @@ We consider the grid size as $G$ and the box size as $B$.
 ## Experiments
 
 Experiments were run on AMD Ryzen 7 5800X 8-Core Processor and 64 GB Ram on Fedora.
-We will focus on one single instance, but keep increasing the size of our grid. Creating a killer sudoku with a size 16 or higher is very hard to do, so we will stick with constraints for the cages for 4x4 or 9x9 and just increase the size(this will affect the satisfiability).
+We will focus on one single instance(input_9x9_working.in), but keep increasing the size of our grid. Creating a killer sudoku with a size 16 or higher is very hard to do, so we will stick with constraints for the cages for 4x4 or 9x9 and just increase the size(this will affect the satisfiability).
 
-| Size | time(s) | solvable| 
+
+| size  | time(s) | solvable |
+| ------------- | ------------- | ----------- |
 | 4 | 0.0069 | N |
 | 9 | 0.0545 | Y |
 | 16 | 6.3149 | N |
 | 25 | 9.1540 | N |
 | 36 | >10(crashes) | N |
 | 49 | >10(crashes) | N |
+
+The experiments with larger sizes constantly kept crashing the system which is not a surprise given how much memory it would take for a grid of size 81+ and to solve it.
