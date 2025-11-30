@@ -2,11 +2,11 @@ This is a solution to the homework "Killer Sudoku" with $n$ constraints(size of 
 
 # Problem Description
 
-Killer Sudoku is a puzzle played on a {n×n} grid containing nxn cells. The cells are filled in with numbers from the set {1…n}. Each row and column must contain all numbers {1…n}. Each of the n non-overlapping sqrt(n)xsqrt(n) subsquares (named boxes) must also contain all numbers {1…n}
+Killer Sudoku is a puzzle played on a {n×n} grid containing nxn cells. The cells are filled in with numbers from the set {1…n}. Each row and column must contain all numbers {1…n}. Each of the n non-overlapping sqrt(n)xsqrt(n) subsquares (named boxes) must also contain all numbers {1…n}.
 
 Each Killer Sudoku puzzle has a set of cages. A cage is a set of contiguous cells and a total; the numbers in the cells must add up to the total. Also, the cells in a cage cannot contain the same number more than once. The cages do not overlap, and they cover all cells. Cages typically contain two to four cells. Typically a Killer Sudoku puzzle will have exactly one solution. 
 
-The input is given in a format where the first line gives the size of the grid, the second line gives the total number of cages and following it is the cages one by one on each line in the following format
+The input is given in a format where the first line gives the size of the grid, the second line gives the total number of cages and following it is the cages one by one on each line in the following format.
 
 sum num_of_cells_in_this_cage cell_1(row1 col1) cell_2 ....
 
@@ -22,6 +22,8 @@ An example of a valid input format is
 10 4 1 3 2 3 3 3 4 3
 10 4 1 4 2 4 3 4 4 4
 </pre>
+
+The output if satisfiable is a readable format of a $nxn$ grid with numbers that satisfy it.
 
 
 # Encoding
@@ -55,10 +57,10 @@ We consider the grid size as $G$ and the box size as $B$.
 
 ## Example instances
 
-- input_4x4_working.in : A 4x4 solvable instance
-- input_9x9_working.in : A 9x9 solvable instance(example taken directly from the website of the problem)
-- input_9x9_unsat.in : An unsatisfiable instance
-- input_large.in : An instance that takes a considerable amount of time to process
+- input_4x4_working.in : A 4x4 solvable instance.
+- input_9x9_working.in : A 9x9 solvable instance(example taken directly from the website of the problem).
+- input_9x9_unsat.in : An unsatisfiable instance.
+- input_large.in : An instance that takes a considerable amount of time to process.
 
 ## Experiments
 
@@ -76,3 +78,7 @@ We will focus on one single instance(input_9x9_working.in), but keep increasing 
 | 49 | >10(crashes) | N |
 
 The experiments with larger sizes constantly kept crashing the system which is not a surprise given how much memory it would take for a grid of size 81+ and to solve it.
+
+### Conclusion
+
+Most of the testing was done on the example given on the website of the problem. Creating new ones manually is very time consuming, however since games of this kind exist, the examples there were taken for the smaller tasks, and size just increased to measure how the program would run in these cases. The example solution prepared was taken as a template as well, and helped a lot.
